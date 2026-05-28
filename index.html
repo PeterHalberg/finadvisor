@@ -1,0 +1,111 @@
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="style.css">
+  <script src = "main.js" type = "module"></script>
+</head>
+<body>
+  <div class = "info"><img src = "https://media.istockphoto.com/id/2054862659/vector/dollar-sign-icon.jpg?s=612x612&w=0&k=20&c=3sc-JGyuSLgcAd3N9MwsiXYd3ZFW4O60ivn23kNPnd8=" style = "width:100%;"><h1>Your Financial Advisor</h1></div>
+  <br>
+  <div class = "board">
+    <img src = "https://img.icons8.com/ios_filled/1200/apple-calculator.jpg" style = "width:20%;" id = "calc"> <span> calculator </span> 
+  <img src = "https://static.vecteezy.com/system/resources/previews/035/637/231/non_2x/bank-black-icon-isolated-on-white-background-free-vector.jpg" style = "width:20%;" id = "debt"> <span> debt </span> 
+    <img src = "https://thumbs.dreamstime.com/b/human-head-profile-brain-symbol-black-icon-vector-illustration-simple-isolated-white-background-130069403.jpg" style = "width:20%;" id = "chat"> <span> chat </span>
+  </div>
+  <br>
+  <div class = "main">
+    <div class = "fullbox">
+      <p>Financial literacy is the ability to understand and effectively use various financial skills, including personal financial management, budgeting, and investing. It's the foundation for a healthy financial future.</p>
+    </div>
+    <div class = "halfbox">
+      <p>Budgeting Basics
+        A budget helps you track income and expenses, ensuring you live within your means.</p>
+      <p>· Track all sources of income
+· Categorize and monitor expenses
+        · Follow the 50/30/20 rule: 50% needs, 30% wants, 20% savings</p>
+    </div>
+    <div class = "halfbox">
+      <p>Emergency Fund
+An emergency fund is a financial safety net for unexpected expenses or income loss.</p>
+      <p>· Aim for 3–6 months of living expenses
+· Keep it in an easily accessible account
+· Build gradually through automatic savings</p>
+    </div>
+    <div class = "fullbox">
+      <h3>Halyk Bank (Narodny Bank of Kazakhstan)</h3>
+      <p>As the largest bank in Kazakhstan by loan portfolio, Halyk Bank offers unsecured consumer loans up to 8 million tenge (or 10 million for salary project clients) with terms ranging from 6 to 60 months . Interest rates range from 17.5% to 38% per annum, with the full cost of credit (Effective APR) between 28.8% and 45.3% . You can apply through the Halyk Homebank mobile app with video verification or an electronic digital signature. Partial and early repayment is commission-free in the mobile app, but late payments incur a penalty of 0.5% per day . Contact number: 7111 (toll-free from mobile) .</p>
+      <h3>Kaspi Bank</h3>
+      <p>Kaspi Bank is a leader in fintech and online lending, known for its "Installment Plan" and "Cash Loan" products managed entirely through the Kaspi.kz mobile app. For goods credit in the Kaspi Store, loan terms range from 3 to 24 months depending on the purchase amount (purchases of 100,000 tenge or more qualify for up to 24 months) . For cash loans, amounts range from 10,000 to 2,200,000 tenge with annual interest rates from 11.0% to 57.3% and terms up to 48 months . The bank is known for fast approval times and fully digital processing. Contact number: 9999 (toll-free from mobile) .</p>
+      <h3>Bank CenterCredit (BCC)</h3>
+      <p>Bank CenterCredit is one of Kazakhstan's oldest systemically important banks. As of April 1, 2026, BCC has updated its tariffs for individual borrowers regarding operations such as payment deferrals, changes to loan terms, payment types, and repayment dates . These new tariffs apply to loans issued from April 1, 2026 onward, while previously issued loans follow earlier rates. The bank encourages customers to manage their loans through the bcc.kz mobile app. Contact number: 505 (toll-free from mobile) .</p>
+    </div>
+    <div class = "halfbox">
+    <h1>Calculator</h1>
+      <h3>Loan amount ($):</h3>
+      <input id = "amount" value = "0">
+      <h3>Monthly interest rate (%):</h3>
+      <input id = "interest" value = "0">
+      <h3>Loan term (months):</h3>
+      <input id = "length" value = "0">
+      <button id = "exec_calc" style = "background-color: lightblue;">Calculate</button>
+      </div>
+    <div class = "halfbox">
+      <h1>Result</h1>
+      <h3>Monthly payment:</h3>
+      <span id = "mpayment">0</span>
+      <h3>Total payback:</h3>
+      <span id = "payback">0</span>
+      <h3>Interest:</h3>
+      <span id = "interestpay">0</span>
+    </div>
+    <div class = "halfbox">
+    <h1>Calculator</h1>
+      <h3>Income ($):</h3>
+      <input id = "income" value = "0">
+      <h3>Outcome ($):</h3>
+      <input id = "outcome" value = "0">
+      <h3>Loan payments ($):</h3>
+      <input id = "loan" value = "0">
+      <button id = "exec_debt" style = "background-color: lightblue;">Calculate</button>
+      </div>
+    <div class = "halfbox">
+      <h1>Result</h1>
+      <h3>Status:</h3>
+      <span id = "status">0</span>
+      <h3>Cushion:</h3>
+      <span id = "Cushion">0</span>
+      <h3>Debt-to-Income ratio:</h3>
+      <span id = "ratio">0</span>
+    </div>
+    <div class = "fullbox"><div class="fullbox">
+  <h1>Financial AI Assistant</h1>
+  <input id="chat-input" type="text" placeholder="Задай финансовый вопрос...">
+  <button id="exec_chat">ask...</button>
+  <p>Answer: <span id="chat-output">Wait..</span></p>
+</div>
+
+<script type="module" src="main.js"></script></div>
+    <dialog id="termsModal">
+  <h2>Terms of Use</h2>
+  Using this page you accept our <a href = "license.tml"> Terms of Use </a>
+  </p>
+  <label>
+    <input type="checkbox" id="acceptCheck"> I have read and accepted
+  </label>
+  <button id="closeBtn" disabled>Accept Terms of Use</button>
+</dialog>
+
+<script>
+  const modal = document.getElementById('termsModal');
+  const checkbox = document.getElementById('acceptCheck');
+  const button = document.getElementById('closeBtn');
+  modal.showModal();
+  checkbox.addEventListener('change', () => {
+    button.disabled = !checkbox.checked;
+  });
+  button.addEventListener('click', () => {
+    modal.close();
+  });
+</script>
+  </div>
+</body>
